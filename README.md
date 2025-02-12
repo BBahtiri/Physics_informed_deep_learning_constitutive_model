@@ -7,20 +7,37 @@ A neural architecture that learns constitutive material behavior while rigorousl
 
 ## Key Features
 
-🔬 **Physics-Informed Architecture**  
-- Enforces fundamental thermodynamic principles:  
-  - Non-negative free energy (ψ ≥ 0)  
-  - Stress potential relationship (σ = ∂ψ/∂ε)  
-  - Non-negative dissipation (D ≥ 0)  
-  - Frame indifference through invariant formulation  
-  - Proper reference configuration (zero initial conditions)  
+🔬 **Material-Specific Formulation**
+- **Transversely Isropic Behavior**:
+  - Structural tensor formulation (A = a₀ ⊗ a₀)
+  - Specialized invariant set for TI materials:
+    - I₁ = tr(ε)
+    - I₂ = tr(ε²)
+    - I₃ = tr(Aε)
+    - I₄ = tr(Aε²)
+    - I₅ = tr(ε³)
+    - I₆ = -2√det(2ε + I)
+  - Frame-indifferent stress response through invariant formulation
+
+🌐 **Invariant-Based Architecture**
+- Processes strain invariants instead of full tensor
+- Avoids tensor operations through scalar invariant formulation
+- Automatic derivative calculations for:
+  - ∂I₁/∂ε = I
+  - ∂I₂/∂ε = 2ε
+  - ∂I₃/∂ε = A
+  - ∂I₄/∂ε = Aε + εA
+  - ∂I₅/∂ε = 3ε²
+  - ∂I₆/∂ε = -J·C⁻¹
 
 🧠 **Network Components**  
-- LSTM layers for history-dependent material behavior  
-- PICNN (Partially Input Convex Neural Network) for convex free energy  
-- Internal state variables with thermodynamically consistent evolution  
-- Automatic stress computation via chain rule differentiation  
-- Custom loss functions combining data fidelity and physical constraints  
+- LSTM layers for history-dependent behavior in TI materials  
+- PICNN architecture for convex free energy in invariant space  
+- Internal variables capturing anisotropic hardening  
+- Stress computation via invariant chain rule:  
+  ```math
+  S = 2∑_{i=1}^6 (∂ψ/∂I_i)(∂I_i/∂ε)
+  ```
 
 📊 **Data Integration**  
 - Processes experimental stress-strain data from Excel files  
