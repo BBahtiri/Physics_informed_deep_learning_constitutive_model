@@ -46,12 +46,6 @@ A neural architecture that learns constitutive material behavior while rigorousl
 - Comprehensive data normalization/visualization pipeline  
 - Batch training with adaptive learning rate scheduling  
 
-## Installation
-bash
-git clone https://github.com/yourusername/PIDL-Material-Modeling.git
-cd PIDL-Material-Modeling
-pip install -r requirements.txt
-
 ## Usage
 
 1. **Data Preparation**  
