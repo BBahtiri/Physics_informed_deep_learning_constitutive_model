@@ -62,5 +62,23 @@ The model generates:
 - Thermodynamic consistency validation plots  
 - Training loss curves (stress error, dissipation, energy)  
 - Model checkpoints for deployment  
-- Detailed visualizations of all network outputs  
+- Detailed visualizations of all network outputs
+
+# References
+
+For more informations, refer to our paper:
+
+[Paper](https://doi.org/10.1016/j.cma.2024.117038)
+
+```
+@article{bahtiri2024thermodynamically,
+  title={A thermodynamically consistent physics-informed deep learning material model for short fiber/polymer nanocomposites},
+  author={Bahtiri, Betim and Arash, Behrouz and Scheffler, Sven and Jux, Maximilian and Rolfes, Raimund},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={427},
+  pages={117038},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 
