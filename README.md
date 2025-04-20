@@ -10,7 +10,7 @@ A neural architecture that learns constitutive material behavior while rigorousl
 🔬 **Material-Specific Formulation**
 - **Transversely Isropic Behavior**:
   - Structural tensor formulation (A = a₀ ⊗ a₀)
-  - Specialized invariant set for TI materials:
+  - Specialized invariant set for Composite materials:
     - I₁ = tr(ε)
     - I₂ = tr(ε²)
     - I₃ = tr(Aε)
@@ -31,7 +31,7 @@ A neural architecture that learns constitutive material behavior while rigorousl
   - ∂I₆/∂ε = -J·C⁻¹
 
 🧠 **Network Components**  
-- LSTM layers for history-dependent behavior in TI materials  
+- LSTM layers for history-dependent behavior in polymeric materials  
 - PICNN architecture for convex free energy in invariant space  
 - Internal variables capturing anisotropic hardening  
 - Stress computation via invariant chain rule:  
